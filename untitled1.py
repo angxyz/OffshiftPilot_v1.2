@@ -34,8 +34,8 @@ generateCommitment = json.load(generateCommitment)
 generateCommitment["recipientPubKey"] = user1["PublicKey"]
 
 amountInput = input("Enter the amount of test XFT you wish to deposit (must be a non-negative integer): ")
-amountInput = int(amountInput)
-generateCommitment["amount"] = amountInput * 10**18
+amountInput = float(amountInput)
+generateCommitment["amount"] = int(amountInput * 10**18)
 
 with open("./generateCommitment.json", "w") as fileGenerateCommitment:
     json.dump(generateCommitment, fileGenerateCommitment , sort_keys=True, indent=3)
@@ -241,11 +241,11 @@ singleSig2["Message"] = singleSig["Message"]
 singleSig2["PrivateKey"] = int(user2["PrivateKey"])
 singleSig2["PubKey"] = user2["PublicKey"]
 
-with open("./singleSig2.json", "w") as fileSingleSig2:
+with open("./singleSig.json", "w") as fileSingleSig2:
     json.dump(singleSig2, fileSingleSig2, sort_keys=True, indent=3)
 
 print("Before executing the withdrawal, user 2 must generate a Schnorr single signature.")
-print("To do so, run the following command:\ncurl -i -X POST -H \"Content-Type: application/json\" -d \"@singleSig2.json\" localhost:10000/singleSig")
+print("To do so, run the following command:\ncurl -i -X POST -H \"Content-Type: application/json\" -d \"@singleSig.json\" localhost:10000/singleSig")
 user2Schnorr = input("Paste user 2's Schnorr signature here: ")
 user2Schnorr = json.loads(user2Schnorr)
 
