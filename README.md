@@ -51,12 +51,12 @@ Output format:
 }
 ```
 
-Where: `R = r*G` and `S = r + e*x` with: 
+Where: `R = r*G` and `S = r - e*x` with: 
 
-* `r` being the secret message
+* `r` being a randomly generated value
 * `G` being the generating point on the elliptic curve 
-* `e` being a randomly generated scalar, and
-* `x` being the private signing key
+* `e` is the hash of (r, message)
+* `x` being the user private key
 
 ### 3. Generating a Pedersen Commitment
 
