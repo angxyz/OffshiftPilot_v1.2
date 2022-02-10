@@ -56,7 +56,7 @@ Where: `R = r*G` and `S = r - e*x` with:
 * `r` being a randomly generated value
 * `G` being the generating point on the elliptic curve 
 * `e` is the hash of (r, message)
-* `x` being the user private key
+* `x` being the signing private key
 
 ### 3. Generating a Pedersen Commitment
 
