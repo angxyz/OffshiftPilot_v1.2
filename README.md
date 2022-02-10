@@ -1,4 +1,4 @@
-# Offshift Testnet Pilot - JSON Files
+# Offshift Testnet Pilot - Version 1.2
 ![[Offshift Testnet Pilot: Client-Side Guide](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/)](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/cover.png)
 [Offshift Testnet Pilot: Client-Side Guide](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/)
 
