@@ -409,3 +409,65 @@ Where:
 * `recipientPublicKey` is the recipient's generated public key
 * `senderPrivateKey` is the Ethereum private key of the sender
 * `senderPubKey` is the generated public key of the sender
+
+## Recipient Withdrawal of Committed Tokens
+### 1. Schnorr Single Signature
+`curl -i -X POST -H "Content-Type: application/json" -d "@singleSig.json" localhost:10000/singleSig`
+
+Input format:
+```json
+{
+   "Message": "1234abcdWXYZ",
+   "PrivateKey": 50164087880838209208916483351314702263229810715424671509385049262595918466125,
+   "PubKey": {
+      "X": 55393486233968973884023741539226407878877539358088804034904205276743150878592,
+      "Y": 67470022574068113682912966951026732901032112437171999642164715379119585347587
+   }
+}
+
+```
+Where:
+`"Message"` is the secret message to be encoded;
+
+`"PrivateKey"` and  `"PubKey"` user 1's keys generated in step 1.
+
+
+Output format:
+```json
+{
+"R":
+  {
+    "X":66320251617260054097359498953279972194460317246623014650071823237991832001873,
+    "Y":43924063416169606105749452716949701288867104906269404650930371145957367751385
+  },
+"S":"107566485657041323120838151611738930088458765751712843787299781921212703624109"
+}
+```
+
+### 2. Withdrawal
+`curl -i -X POST -H "Content-Type: application/json" -d "@withdraw.json" localhost:10000/withdraw`
+
+```json
+{
+   "R": {
+      "X": 88591355403813842779860435825624823225226634623962894382168517548323241389858,
+      "Y": 10138031624112932855475458620758180874457135499351406753398420273937926159050
+   },
+   "S": "101535677211241494780729862937391412333921537347832530642806859772468805573385",
+   "amount": 123400000000000000,
+   "commitmentOldId": 4,
+   "message": "1234abcd",
+   "publicKey": {
+      "X": 41255657716858643098295895619894439272077023025469053007949754941291125785666,
+      "Y": 26930685929672893587610449705930960608851827760970437980334922890775866836884
+   },
+   "senderPrivateKey": "[Wallet private key goes here]"
+}
+```
+* `R` is the common R generated in step 4 of part 2.
+* `S` is the aggregated signature generated in step 6 of part 2.
+* `amount` is the amount to withdraw (Note: In this version of the pilot, the entire committed amount must be withdrawn).
+* `commitmentOldId` is the index of the commitment made by user 1 (depositor)
+* `message` is the secret message signed by both users
+* `publicKey` is user 2's (the withdrawer's) generated public key
+* `senderPrivateKey` is the Ethereum (web3) private key corresponding to the address sending the transaction to the blockchain
