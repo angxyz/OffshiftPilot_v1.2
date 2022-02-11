@@ -2,6 +2,35 @@
 ![[Offshift Testnet Pilot: Client-Side Guide](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/)](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/cover.png)
 [Offshift Testnet Pilot: Client-Side Guide](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/)
 
+## Downloading and running the Docker container for the first time
+This requires Docker Desktop (and its dependencies) to be installed on your machine. [Docker Installation Documentation](https://docs.docker.com/desktop/)
+
+### To pull the Offshift Docker v1.2 Container
+`docker pull offshiftxft/offshift:v1.2`
+
+[Video walkthrough here](https://youtu.be/8Rd0VProHF4)
+
+### To run the container
+`docker run -p 10000:10000/offshiftxft/offshift:v1.2`
+
+### Downloading example JSON files to working directory
+`docker cp (containerID):/app/inputExample/ ./`
+
+Where (containerID) is that of the Offshift v1.2 Pilot currently running in Docker.
+[Video walkthrough here](https://youtu.be/hXVluwb1ED0)
+
+## Getting Test XFT
+`curl -i -X GET -H "Content-Type: application/json" -d "@getTokens.json" localhost:10000/getTokens`
+
+Input format:
+```json
+{
+  "recipient": "0x8Bcca25d1CDedBC6A09802B11aaD4c6AC4a52dE2"
+}
+
+```
+Each transaction will send 10 TestXFT
+
 ## Depositing Test XFT and Generating a Pedersen Commitment
 ### 1. Generation of public and private keys
 `curl -i -X GET -H "Content-Type: application/json" -d "@keys.json" localhost:10000/keys`
