@@ -16,8 +16,7 @@ This requires Docker Desktop (and its dependencies) to be installed on your mach
 ### Downloading example JSON files to working directory
 `docker cp (containerID):/app/inputExample/ ./`
 
-Where (containerID) is that of the Offshift v1.2 Pilot currently running in Docker.
-
+Where (containerID) is that of the Offshift v1.2 Pilot currently running in Docker. 
 For example, if the container ID is `ab51486470c8`, we get
 
 `docker cp ab51486470c8:/app/inputExample/ ./`
