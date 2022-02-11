@@ -24,7 +24,7 @@ For example, if the container ID is `ab51486470c8`, we get
 [Video walkthrough here](https://youtu.be/hXVluwb1ED0)
 
 ## Getting Test XFT
-`curl -i -X GET -H "Content-Type: application/json" -d "@getTokens.json" localhost:10000/getTokens`
+`curl -i -X POST -H "Content-Type: application/json" -d "@getTokens.json" localhost:10000/getTokens`
 
 Input format:
 ```json
