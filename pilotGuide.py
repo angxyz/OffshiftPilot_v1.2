@@ -33,7 +33,7 @@ generateCommitment = json.load(generateCommitment)
 
 generateCommitment["recipientPubKey"] = user1["PublicKey"]
 
-amountInput = input("Enter the amount of test XFT you wish to deposit (must be a non-negative integer): ")
+amountInput = input("Enter the amount of test XFT you wish to deposit (must be a non-negative value): ")
 amountInput = float(amountInput)
 generateCommitment["amount"] = int(amountInput * 10**18)
 
