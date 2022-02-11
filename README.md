@@ -17,6 +17,11 @@ This requires Docker Desktop (and its dependencies) to be installed on your mach
 `docker cp (containerID):/app/inputExample/ ./`
 
 Where (containerID) is that of the Offshift v1.2 Pilot currently running in Docker.
+
+For example, if the container ID is `ab51486470c8`, we get
+
+`docker cp ab51486470c8:/app/inputExample/ ./`
+
 [Video walkthrough here](https://youtu.be/hXVluwb1ED0)
 
 ## Getting Test XFT
