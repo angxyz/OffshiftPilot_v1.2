@@ -2,6 +2,8 @@
 ![[Offshift Testnet Pilot: Client-Side Guide](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/)](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/cover.png)
 [Offshift Testnet Pilot: Client-Side Guide](https://offshift.io/public/blog/2021-12-31-offshift-pilot-client-side-guide/)
 
+Contract Address (Goerli Testnet): https://goerli.etherscan.io/address/0xc83476667bdce8c859a444f4430ccba14a786d1a
+
 ## Downloading and running the Docker container for the first time
 This requires Docker Desktop (and its dependencies) to be installed on your machine. [Docker Installation Documentation](https://docs.docker.com/desktop/)
 
