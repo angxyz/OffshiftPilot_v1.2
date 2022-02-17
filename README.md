@@ -90,7 +90,7 @@ Where: `R = r*G` and `S = r + e*x` with:
 
 * `r` being the randomly generated nonce
 * `G` being the generating point on the elliptic curve 
-* `e` being the hash H(X, R, message)
+* `e` being the hash `H(X, R, message)`
 * `X` being user 1's public key `x*G`
 * `x` being user 1's private key
 
