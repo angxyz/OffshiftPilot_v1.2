@@ -133,7 +133,7 @@ Input format:
 {
    "amount": 10000000000,
    "senderPrivateKey": "[Private key goes here]",
-   "spender": "[Wallet address goes here]"
+   "spender": "0xC83476667bDcE8c859A444f4430cCBA14A786d1A"
 }
 ```
 Where `"amount"` is the amount to approve (times 10^18), `"senderPrivateKey"` is the wallet private key of the sender, and `"spender"` is the wallet address of the sender
